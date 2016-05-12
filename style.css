@@ -1,0 +1,13 @@
+form {
+	position: relative;
+}
+
+form input {
+	position: absolute;
+}
+
+form select {
+	/*position: absolute;	*/
+	left: 1px;
+	top: 1px;
+}

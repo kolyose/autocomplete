@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Autocomplete</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="fire" type="button" onclick="runThis()">Show dropdown items</button>
+<script src="Autocomplete.js"></script>
+	
+<script>
+	var autocomplete = new Autocomplete();
+	document.body.appendChild(autocomplete.node);
+	
+	/*setTimeout(function(){
+	autocomplete.setOptions([
+			{label: "option 1", value: 1},
+			{label: "option 2", value: 2},
+			{label: "option 3", value: 3},
+			{label: "option 4", value: 4},
+			{label: "option 5", value: 5}
+		]);
+	}, 1);*/
+	
+	window.runThis = function () { 
+		//autocomplete.showDropdown();
+		autocomplete.setOptions([
+			{label: "option 1", value: 1},
+			{label: "option 2", value: 2},
+			{label: "option 3", value: 3},
+			{label: "option 4", value: 4},
+			{label: "option 5", value: 5}
+		]);
+	}
+</script>
+</body>
+</html>
