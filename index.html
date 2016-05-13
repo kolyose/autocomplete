@@ -6,24 +6,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button id="fire" type="button" onclick="runThis()">Show dropdown items</button>
+<!--<button id="fire" type="button" onclick="runThis()">Show dropdown items</button>-->
 <script src="Autocomplete.js"></script>
 	
 <script>
-	var autocomplete = new Autocomplete();
+	var autocomplete = new Autocomplete({
+		options: [
+						{label: "option 1", value: 1},
+						{label: "option 2", value: 2},
+						{label: "option 3", value: 3},
+						{label: "option 4", value: 4},
+						{label: "option 5", value: 5}
+					],
+		value: 4,
+		onChange: (value) => {console.log(`Changed to value: ${value}`);},
+		onAutocompleteChange: function(evt){
+			return new Promise((resolve,reject) => {
+				setTimeout(function(){			
+					resolve([
+						{label: "option 6", value: 6},
+						{label: "option 7", value: 7},
+						{label: "option 8", value: 8},
+						{label: "option 9", value: 9},
+						{label: "option 10", value: 10},
+						{label: "option 11", value: 11},
+						{label: "option 12", value: 12},
+						{label: "option 13", value: 13}
+					]);
+				}, 2000);
+			});
+		}
+	});
 	document.body.appendChild(autocomplete.node);
 	
-	/*setTimeout(function(){
-	autocomplete.setOptions([
-			{label: "option 1", value: 1},
-			{label: "option 2", value: 2},
-			{label: "option 3", value: 3},
-			{label: "option 4", value: 4},
-			{label: "option 5", value: 5}
-		]);
-	}, 1);*/
 	
-	window.runThis = function () { 
+/*window.runThis = function () { 
 		//autocomplete.showDropdown();
 		autocomplete.setOptions([
 			{label: "option 1", value: 1},
@@ -32,7 +49,8 @@
 			{label: "option 4", value: 4},
 			{label: "option 5", value: 5}
 		]);
-	}
+	} 
+	*/
 </script>
 </body>
 </html>

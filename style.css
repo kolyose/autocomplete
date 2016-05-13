@@ -12,6 +12,10 @@ form select {
 	top: 1px;
 }
 
+.hidden{
+	visibility: hidden;
+}
+
 #spinner {
   position: absolute;
   margin: 2px 0px 0px 150px;
